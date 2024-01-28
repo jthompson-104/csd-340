@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    background-color: darkgray;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+h3 {
+    text-align: center;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: .75em;
+}
+
+#homelink {
+    width: fit-content;
+    margin-top: 40px;
+    margin-right: 40px;
+    float: right;
+}
