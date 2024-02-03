@@ -2,26 +2,28 @@
     margin-top: 50px;
     margin-left: 100px;
     margin-right: 100px;
+    background-color: rgb(54, 54, 54);
 }
 
 h1, h2, h3, h4 {
     background-color:rgb(20, 20, 20);
-    color:rgb(157, 212, 194);
+    color:white;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(99, 160, 196);
+    border-color: rgb(54, 54, 54);
     padding: 10px;
+    font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
 a:link {
-    color:rgb(99, 160, 196);
+    color:rgb(55, 38, 68);
     text-decoration: none;
+}
+
+a:visited{
+    color: rgb(55, 38, 68);
 }
 
 a:hover {
     color: rgb(143, 207, 245);
-}
-
-a:visited {
-    color: rgb(101, 99, 196);
 }
