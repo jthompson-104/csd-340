@@ -1,0 +1,94 @@
+<!-- Jacob Thompson : Assignment 10.3 -->
+<!DOCTYPE html>
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        .CenteredContent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+        img {
+            display: inline-block;
+            margin-right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var spadeIndexMin = 1;
+        var spadeIndexMax = 13;
+        var spadeIndex = spadeIndexMin;
+        
+        var heartIndexMin = 14;
+        var heartIndexMax = 26;
+        var heartIndex = heartIndexMin;
+
+        var diamondIndexMin = 27;
+        var diamondIndexMax = 39;
+        var diamondIndex = diamondIndexMin;
+        
+        var clubIndexMin = 40;
+        var clubIndexMax = 52;
+        var clubIndex = clubIndexMin;
+
+        function cardIncrement(id){
+
+            var index;
+
+            switch(id){
+                case "SpadeCard":
+                    spadeIndex = (spadeIndex == spadeIndexMax) ? spadeIndexMin : spadeIndex + 1;
+                    index = spadeIndex;
+                    break;
+                case "DiamondCard":
+                    diamondIndex = (diamondIndex == diamondIndexMax) ? diamondIndexMin : diamondIndex + 1;
+                    index = diamondIndex;
+                    break;
+                case "HeartCard":
+                    heartIndex = (heartIndex == heartIndexMax) ? heartIndexMin : heartIndex + 1;
+                    index = heartIndex;
+                    break;
+                case "ClubCard":
+                    clubIndex = (clubIndex == clubIndexMax) ? clubIndexMin : clubIndex + 1;
+                    index = clubIndex;
+                    break;
+            }
+
+            var card = document.getElementById(id);
+            card.src="Cards/" + index + ".png";
+        }
+
+        function changeSize(direction){
+
+            let cards = [];
+            cards[0] = document.getElementById('SpadeCard');
+            cards[1] = document.getElementById('HeartCard');
+            cards[2] = document.getElementById('DiamondCard');
+            cards[3] = document.getElementById('ClubCard');
+
+            cards.forEach(function(card){
+                card.width += direction < 0 ? -10 : 10;
+            });
+            
+        }
+        
+    </script>
+
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+    <div class="CenteredContent" onmouseover="changeSize(1)" onmouseout="changeSize(-1)">
+        <img src = "Cards/1.png" id="SpadeCard" onclick="cardIncrement('SpadeCard')">        
+        <img src = "Cards/14.png" id="HeartCard" onclick="cardIncrement('HeartCard')">
+        <img src = "Cards/27.png" id="DiamondCard" onclick="cardIncrement('DiamondCard')">
+        <img src = "Cards/40.png" id="ClubCard" onclick="cardIncrement('ClubCard')">
+    </div>
+
+    <h3>Click on a card to increment.</h3>
+</body>
+</html>
