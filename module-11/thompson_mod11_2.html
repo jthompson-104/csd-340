@@ -1,0 +1,59 @@
+<!-- Jacob Thompson : Assignment 11.2 -->
+<!DOCTYPE html>
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+</head>
+<body>
+
+    <script>
+       var items = [];
+       
+       function addItem(){
+        var textbox = document.getElementById('textbox');
+        var itemToAdd = textbox.value;
+
+        if(itemToAdd != ''){
+            items.push(itemToAdd);
+            alert(itemToAdd + ' added to list at position ' + (items.length));
+        }
+        else{
+            alert("Type a value into the text box to add it to the list.")
+        }
+
+        textbox.value = '';
+       }
+
+       function deleteItem(){
+            if(items.length > 0){
+                var itemToDelete = items.pop();
+                alert("Deleted the item '" + itemToDelete + "' at position " + (items.length + 1));
+            }
+            else{
+                alert("There are no items in the list...");
+            }
+       }
+
+       function displayItems(){
+            var container = document.getElementById("displayContainer");
+            container.innerHTML = '';
+
+            for(var i = 0; i < items.length; i++){
+                var newH3 = document.createElement("h3");
+                newH3.textContent = "Item " + (i + 1) + " : " + items[i];
+                container.appendChild(newH3);
+            }
+       }
+    </script>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <div class="inputs">
+        <input type="text" id="textbox">
+        <button type="button" onclick="addItem()">Add</button>
+        <button type="button" onclick="deleteItem()">Delete Last Entry</button>
+        <button type="button" onclick="displayItems()">Display</button>
+    </div>
+    <hr>
+    <div id="displayContainer">
+        
+    </div>
+</body>
