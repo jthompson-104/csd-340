@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+}
+
+#container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#olist {
+    width: 45%;
+    padding: 10px;
+    border-color: red;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+}
+
+#ulist {
+    width: 45%;
+    margin-left: 50%;
+    padding: 10px;
+    border-color: red;
+    border-radius: 15px;
+    border-style: dashed;
+    border-width: 1px;
+}
+
+#homelink {
+    width: 100%;
+    margin-top: 40%;
+    margin-bottom: 20px;
+    float: right;
+}
+
+a:link {
+    float: right;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+h3 {
+    font-weight: 500;
+}
+
+li {
+    font-weight: 300;
+}
+
+ol {
+    list-style-position: outside;
+}
+
+ul {
+    list-style-position: outside;
+    list-style: upper-roman;
+}

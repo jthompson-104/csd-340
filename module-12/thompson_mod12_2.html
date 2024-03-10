@@ -1,0 +1,98 @@
+<!-- Jacob Thompson : Assignment 12.2 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSD 340 Web Development with HTML and CSS</title>
+        <link href="thompson_mod12_2.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Assignment 12.2: JavaScript - Part 4</h1>
+            <div id="olist">
+                <h3>Top 10 Favorite Books</h3>
+
+                <button onclick="sortAscending()">Top to Bottom</button>
+                <button onclick="sortDescending()">Bottom to Top</button>
+                <hr>
+                <div id="sortableList">
+
+                </div>
+            </div>
+            <div id="ulist">
+                <h3>5 Things I've Learned Since the Course Started</h3>
+                <ul>
+                    <li>How to add links to a webpage with HTML</li>
+                    <li>How to create a gitHub landing page with HTML</li>
+                    <li>The various ways the brain processes information</li>
+                    <li>Many different HTML tags and their uses</li>
+                    <li>How to style a basic page with the use of CSS</li>
+                </ul>
+            </div>
+            <div id="homelink">
+                <a href="../index.html">Landing Page</a>
+            </div>
+            
+            <script>
+                var books = [];
+
+                books.push("The Hobbit");
+                books.push("LOTR: The Return of the King");
+                books.push("LOTR: The Fellowship of the Ring");
+                books.push("LOTR: The Two Towers");
+                books.push("Ready Player One");
+                books.push("Harry Potter and the Sorcerers Stone");
+                books.push("The Witcher");
+                books.push("Where the Red Fern Grows");
+                books.push("Berserk");
+                books.push("Dune");
+
+                var parentNode = document.getElementById("sortableList");
+                var list = document.createElement("ol");
+                
+                for(var i = 0; i < books.length; i++){
+                    var bookItem = document.createElement("li");
+                        bookItem.textContent = books[i];
+                        list.appendChild(bookItem);
+                }
+
+                if(parentNode){
+                    parentNode.appendChild(list);
+                }
+                else{
+                    console.log("Parent element not found");
+                }
+
+                function sortAscending(){
+                    if(list.hasAttribute("reversed")){
+                        list.removeAttribute("reversed");
+                        list.innerHTML = '';
+
+                        books.reverse();
+
+                        for(var i = 0; i < books.length; i++){
+                            var bookItem = document.createElement("li");
+                            bookItem.textContent = books[i];
+                            list.appendChild(bookItem);
+                        }
+                    }
+                }
+
+                function sortDescending(){
+                    if(!list.hasAttribute("reversed")){
+                        list.setAttribute("reversed", "");
+                        list.innerHTML = "";
+
+                        books.reverse();
+
+                        for(var i = 0; i < books.length; i++){
+                            var bookItem = document.createElement("li");
+                            bookItem.textContent = books[i];
+                            list.appendChild(bookItem);
+                        }
+                    }
+                }
+                
+            </script>
+        </div>
+    </body>
+</html>
